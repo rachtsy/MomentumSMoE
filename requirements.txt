@@ -1,0 +1,6 @@
+# torch==2.2.0 
+# numpy
+ninja
+dm-tree
+tqdm
+torchmetrics==1.3.1

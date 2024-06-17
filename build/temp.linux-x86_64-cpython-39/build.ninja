@@ -1,0 +1,24 @@
+ninja_required_version = 1.3
+cxx = c++
+
+cflags = -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -I/cm/local/apps/openssl/include -I/usr/include/libxml2 -I/cm/local/apps/openssl/include -I/usr/include/libxml2 -fPIC -I/home/thoth/.local/lib/python3.9/site-packages/torch/include -I/home/thoth/.local/lib/python3.9/site-packages/torch/include/torch/csrc/api/include -I/home/thoth/.local/lib/python3.9/site-packages/torch/include/TH -I/home/thoth/.local/lib/python3.9/site-packages/torch/include/THC -I/usr/local/cuda-12.3/include -I/cm/local/apps/python3/include/python3.9 -c
+post_cflags = -DFMOE_USE_NCCL -DUSE_C10D_NCCL -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_API_INCLUDE_EXTENSION_H '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_COMPILER_TYPE="_gcc"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_STDLIB="_libstdcpp"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' '-DPYBIND11_BUILD_ABI="_cxxabi1011"' -DTORCH_EXTENSION_NAME=fmoe_cuda -DTORCH_EXTENSION_NAME=fmoe_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++17
+cuda_dlink_post_cflags = 
+ldflags = 
+
+rule compile
+  command = $cxx -MMD -MF $out.d $cflags -c $in -o $out $post_cflags
+  depfile = $out.d
+  deps = gcc
+
+
+
+
+
+build /home/thoth/repos/moe/moe/build/temp.linux-x86_64-cpython-39/cuda/fmoe_cuda.o: compile /home/thoth/repos/moe/moe/cuda/fmoe_cuda.cpp
+
+
+
+
+
+
