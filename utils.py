@@ -131,7 +131,6 @@ def _get_optimizer(model, optim, lr: float, momentum: float, grad_clip: float):
         return torch.optim.Adam(
             _get_grad_requiring_params(model),
             lr=lr,
-            weight_decay=1e-5,
         )
     else:
         raise RuntimeError("wrong type of optimizer - must be 'sgd' or 'adam'")
