@@ -63,7 +63,7 @@ def _batchify(data_tensor, batch_size):
 
 def _build_corpus(data_path, env_params, data_name=None):
     # save the corpus to a file so that it's faster next time
-    corpus_path = os.path.join(data_path, "corpus_a1.pt")
+    corpus_path = os.path.join(data_path, "corpus.pt")
     if os.path.exists(corpus_path):
         print("Loading an existing corpus file from {}".format(corpus_path))
         corpus = torch.load(corpus_path)
