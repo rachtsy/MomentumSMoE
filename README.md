@@ -71,4 +71,7 @@ bash scripts/glam-adam-m.sh
 --job-name test 
 ```
 
+### Checkpoints
+Please find our SMoE checkpoints at <https://drive.google.com/drive/folders/1C0-39hmGyXO1ZbKvM_HH0hx2hewgU7ig?usp=sharing>. 
+
 
