@@ -1,1 +1,5 @@
 wandb/
+
+# Compiled and optimized Python code and libraries
+__pycache__/
+*.py[cod]
