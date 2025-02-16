@@ -1,10 +1,9 @@
-import os, sys
+import os
 import argparse
 import math, random
 import functools
 import os, shutil
 import torch
-import tqdm
 from models import CustomizedMoEPositionwiseFFOpt
 
 

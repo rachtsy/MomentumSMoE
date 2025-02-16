@@ -1,4 +1,4 @@
-import os, sys
+import os
 
 def float_from_env(key, default=-1):
     if key in os.environ:

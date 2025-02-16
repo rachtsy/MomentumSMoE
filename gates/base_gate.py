@@ -1,4 +1,3 @@
-import os, sys
 import torch.nn as nn
 
 class BaseGate(nn.Module):

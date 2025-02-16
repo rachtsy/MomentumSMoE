@@ -1,8 +1,7 @@
-import os, sys
 import torch
 from torch.autograd.function import Function
 
-from fmoe.functions import prepare_forward, ensure_comm
+from fmoe.functions import prepare_forward
 from fmoe.functions import _local_scatter, _local_gather 
 import fmoe_cuda as fmoe_native
 from fmoe.fastermoe import expert_utils

@@ -1,4 +1,3 @@
-import os, sys
 from .base_gate import BaseGate
 
 import torch
