@@ -1,8 +1,5 @@
-import os, sys
-import argparse
-import math, random
+import os
 import torch
-import tqdm
 
 
 def _tokenize(text_path, dictionary_to_update):

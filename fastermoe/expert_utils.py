@@ -1,4 +1,3 @@
-import os, sys
 import torch
 
 def get_expert_param_size(e):

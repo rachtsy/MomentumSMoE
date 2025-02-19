@@ -1,6 +1,3 @@
-import os, sys
-import argparse
-import math, random
 import torch
 import fmoe_cuda
 from torch.autograd import Function

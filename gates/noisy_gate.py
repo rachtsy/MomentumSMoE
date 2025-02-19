@@ -1,9 +1,7 @@
-import os, sys
 from .base_gate import BaseGate
 
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 from torch.distributions.normal import Normal
 import math
 

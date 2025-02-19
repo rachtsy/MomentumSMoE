@@ -1,7 +1,5 @@
-import os, sys
 import math
 import torch
-import torch.nn as nn
 import torch.nn.functional as F
 from .naive_gate import NaiveGate
 from .utils import limit_by_capacity

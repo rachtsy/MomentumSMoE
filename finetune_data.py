@@ -1,13 +1,8 @@
-import os, sys
+import os
 import glob
-import pdb
-from collections import Counter, OrderedDict
 import numpy as np
 import torch
-from torch.utils.data import Dataset, DataLoader
 from vocabulary import Vocab
-import torch.nn.functional as F
-from torch.nn.utils.rnn import pad_sequence
 import pytreebank
 
 

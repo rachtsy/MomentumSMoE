@@ -1,12 +1,7 @@
-import os, sys
-import math
 import torch
-import torch.distributed as dist
-import torch.nn as nn
 import torch.nn.functional as F
 from .naive_gate import NaiveGate
 
-from fmoe.functions import count_by_gate
 import fmoe_cuda as fmoe_native
 
 class SwipeGate(NaiveGate):

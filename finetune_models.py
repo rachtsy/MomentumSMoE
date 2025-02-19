@@ -1,10 +1,7 @@
-import os, sys
-import argparse
-import math, random
+import math
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import tqdm
 
 from custom_transformer import FMoETransformerMLP, FMoETransformerMLPOpt
 from custom_gates import *
