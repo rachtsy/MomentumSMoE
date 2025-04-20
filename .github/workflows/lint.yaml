@@ -1,0 +1,48 @@
+name: Lint
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ 'ubuntu-24.04' ]
+        python: [ '3.10' ]
+    name: Python ${{ matrix.python }} on ${{ matrix.os }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: 'pip'
+
+      - name: Install general Python deps
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Install Python deps for lint checks
+        run: python -m pip install --upgrade pylint ruff
+
+      - name: Run Pylint checks
+        run: python -m pylint $(git ls-files '*.py')
+        # Mark this check optional for now, in case it starts out failing.
+        # We will make it required once we've fixed any existing issues.
+        continue-on-error: true
+
+      - name: Run Ruff checks
+        run: python -m ruff check .
+        # Mark this check optional for now, in case it starts out failing.
+        # We will make it required once we've fixed any existing issues.
+        continue-on-error: true
