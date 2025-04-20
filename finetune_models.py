@@ -309,7 +309,7 @@ class TransformerSeqLayer(nn.Module):
 
         self.attn = (
             MultiHeadSeqAttention(hidden_size=hidden_size, dropout=dropout, **kargs)
-            if s is "s"
+            if s == "s"
             else None
         )
         if optimal_policy:
@@ -328,7 +328,7 @@ class TransformerSeqLayer(nn.Module):
                     combine_gate=combine_gate,
                     opt_loss=opt_loss,
                 )
-                if g is "g"
+                if g == "g"
                 else None
             )
         else:
@@ -340,7 +340,7 @@ class TransformerSeqLayer(nn.Module):
                     dropout=dropout,
                     moe_top_k=moe_top_k,
                 )
-                if g is "g"
+                if g == "g"
                 else None
             )
 
@@ -350,7 +350,7 @@ class TransformerSeqLayer(nn.Module):
                 inner_hidden_size=inner_hidden_size,
                 dropout=dropout,
             )
-            if f is "f"
+            if f == "f"
             else None
         )
         self.norm1 = nn.LayerNorm(hidden_size)
