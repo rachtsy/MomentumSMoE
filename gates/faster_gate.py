@@ -1,12 +1,9 @@
-import os, sys
+import os
 from .naive_gate import NaiveGate
 
 import os
-import sys
 import torch
 import torch.nn.functional as F
-from .utils import limit_by_capacity
-import fmoe_cuda
 from fmoe.functions import count_by_gate
 
 nw_per_node = 8

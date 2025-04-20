@@ -1,4 +1,3 @@
-import os, sys
 import torch
 from fmoe.functions import count_by_gate
 import fmoe_cuda as fmoe_native
